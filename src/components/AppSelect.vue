@@ -12,8 +12,8 @@ export default {
 
 <template>
     <div class="p-2">
-            <input class="mx-2">
-            <button> clicca</button>
+            <input v-model="store.utentSelect" class="mx-2">
+            <button @click="$emit('searchDone')"> clicca</button>
     </div>
 </template>
         

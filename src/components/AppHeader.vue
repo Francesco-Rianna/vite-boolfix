@@ -1,23 +1,20 @@
 <script>
-import AppSelect from './AppSelect.vue'
+
 export default {
-    name : 'AppHeader',
-    components : {
-        AppSelect
-    }
+    name : 'AppHeader'
 }
 </script>
 <template>
-    <div class="d-flex justify-content-between p-2">
+    <div class="">
         <div>
             <h1>Boolfix</h1>
         </div>
-        <AppSelect></AppSelect>
-
-        
     </div>
 
 </template>
+        
+
+        
 
 <style scoped lang="scss">
 h1{

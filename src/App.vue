@@ -1,12 +1,14 @@
 <script>
 
 import AppHeader from './components/AppHeader.vue'
+import AppSelect from './components/AppSelect.vue'
 import {store} from './store.js'
 import axios from 'axios'
 
 export default {
   components : {
     AppHeader,
+    AppSelect
     
 
   },
@@ -17,12 +19,15 @@ export default {
   }, 
   methods :{
     getMovieFromApi(){
-      const queryParams = {}
+      const queryParams = {
+        query : store.utentSelect
+      }
+      
       axios.get('https://api.themoviedb.org/3/search/movie?api_key=4ade3b6132e6d33d867aa235b91353ee',{
         params:queryParams
       })
       .then((response)=>{
-       store.movies= response.data.result
+       store.movies= response.data.results
        console.log(store.movies)
       })
 
@@ -36,8 +41,9 @@ export default {
 </script>
 
 <template>
-  <header class="">
+  <header class="d-flex justify-content-between">
     <AppHeader></AppHeader>
+    <AppSelect @searchDone="getMovieFromApi" ></AppSelect>
     
   </header>
 </template>
