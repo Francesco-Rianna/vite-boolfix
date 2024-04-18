@@ -30,13 +30,29 @@ export default {
       })
       .then((response)=>{
        store.movies= response.data.results
-       console.log(store.movies)
+       
+      })
+
+    },
+
+    getSeriesFromApi(){
+      const queryParams = {
+        query : store.utentSelect
+      }
+      
+      axios.get('https://api.themoviedb.org/3/search/tv?api_key=4ade3b6132e6d33d867aa235b91353ee',{
+        params:queryParams
+      })
+      .then((response)=>{
+       store.series= response.data.results
+       
       })
 
     }
   },
   mounted(){
     this.getMovieFromApi();
+    this.getSeriesFromApi() ;
   }
 }
 
@@ -45,7 +61,7 @@ export default {
 <template>
   <header class="d-flex justify-content-between px-3 py-1">
     <AppHeader></AppHeader>
-    <AppSelect @searchDone="getMovieFromApi" ></AppSelect>
+    <AppSelect @searchDoneMovie="getMovieFromApi" @SearchDoneSeries="getSeriesFromApi"></AppSelect>
     
   </header>
 
