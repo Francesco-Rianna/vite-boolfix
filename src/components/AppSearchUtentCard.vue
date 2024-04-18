@@ -18,7 +18,7 @@
               <div class="orig-title">{{movie.original_title}}</div>
               <img :src="`src/assets/img/${movie.original_language}.svg`" :alt=" movie.original_language " >
               
-              <div class="vote">{{ movie.vote_average }}</div>
+              <div class="vote">{{ Math.ceil(movie.vote_average / 2) }}</div>
             </div>
         </div>
     </div>
