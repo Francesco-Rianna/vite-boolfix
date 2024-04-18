@@ -12,8 +12,8 @@ export default {
 
 <template>
     <div class="p-2">
-            <input v-model="store.utentSelect" class="mx-2">
-            <button @click="$emit('searchDone')"> clicca</button>
+            <input v-model="store.utentSelect" class="mx-2 bg-transparent p-1">
+            <button @click="$emit('searchDone')" class="bg-transparent rounded py-1 px-4"> Cerca</button>
     </div>
 </template>
         
@@ -21,4 +21,7 @@ export default {
 
 
 <style scoped lang="scss">
+input,button{
+    color:white;
+}
 </style>

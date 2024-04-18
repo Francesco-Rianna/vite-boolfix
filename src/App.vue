@@ -43,7 +43,7 @@ export default {
 </script>
 
 <template>
-  <header class="d-flex justify-content-between">
+  <header class="d-flex justify-content-between px-3 py-1">
     <AppHeader></AppHeader>
     <AppSelect @searchDone="getMovieFromApi" ></AppSelect>
     
