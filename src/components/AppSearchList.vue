@@ -23,19 +23,17 @@ export default {
 
 <template>
     <div>
-        <div class="row d-flex flex-wrap g-0 p-3 gap-4 ">
-            <div class="col-4 ">
-                <div class="card mt-2">
+        
+                <div class="card" style="width: 18rem;">
                     <div v-if="cardInfo.title" class="title">{{cardInfo.title }}</div>
                     <div v-else>{{ cardInfo.name }}</div>
                     <div v-if="cardInfo.original_title" class="orig-title">{{cardInfo.original_title }}</div>
                     <div v-else>{{ cardInfo.original_name }}</div>
                     <img v-if="flagsArray.includes(cardInfo.original_language)" :src="getFlagUrl(cardInfo)" :alt="cardInfo.original_language">
-                    <div v-else>{{ cardInfo.original_language }}</div>
+                    <div v-else>{{ cardInfo.original_language  }}</div>
                     <div class="vote">{{ Math.ceil(cardInfo.vote_average / 2) }}</div>
                 </div>
-            </div>
-        </div>
+         
     </div>
 </template>
 

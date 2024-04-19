@@ -66,9 +66,15 @@ export default {
   </header>
   <main>
     <h1>Film</h1>
-    <AppSearchList  v-for="movie in store.movies" :key="movie.id" :cardInfo="movie"></AppSearchList>
+    <div class="d-flex flex-wrap gap-2">
+      <AppSearchList  v-for="movie in store.movies" :key="movie.id" :cardInfo="movie"></AppSearchList>
+    </div>
+
     <h1>Serie Tv</h1>
-    <AppSearchList  v-for="series in store.series" :key="series.id" :cardInfo="series"></AppSearchList>
+    <div class="d-flex flex-wrap gap-2">
+      <AppSearchList  v-for="series in store.series" :key="series.id" :cardInfo="series"></AppSearchList>
+    </div>
+
   </main>
 </template>
 
