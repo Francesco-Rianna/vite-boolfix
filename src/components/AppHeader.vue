@@ -7,7 +7,7 @@ export default {
 <template>
     <div class="">
         <div>
-            <h1>Boolfix</h1>
+            <h1>Boolflix</h1>
         </div>
     </div>
 

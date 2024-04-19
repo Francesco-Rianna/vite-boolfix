@@ -19,7 +19,7 @@ export default {
 
 <template>
     <div class="p-2">
-        <input v-model="store.utentSelect" class="mx-2 bg-transparent p-1">
+        <input  @keyup.enter="emitSearchBoth" v-model="store.utentSelect" class="mx-2 bg-transparent p-1">
         <button @click="emitSearchBoth" class="bg-transparent rounded py-1 px-4"> Cerca</button>
     </div>
 </template>
