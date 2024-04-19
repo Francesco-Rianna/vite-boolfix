@@ -30,7 +30,8 @@ export default {
                     <div v-else>{{ cardInfo.name }}</div>
                     <div v-if="cardInfo.original_title" class="orig-title">{{cardInfo.original_title }}</div>
                     <div v-else>{{ cardInfo.original_name }}</div>
-                    <img :src="getFlagUrl(cardInfo)" :alt="cardInfo.original_language">
+                    <img v-if="flagsArray.includes(cardInfo.original_language)" :src="getFlagUrl(cardInfo)" :alt="cardInfo.original_language">
+                    <div v-else>{{ cardInfo.original_language }}</div>
                     <div class="vote">{{ Math.ceil(cardInfo.vote_average / 2) }}</div>
                 </div>
             </div>
