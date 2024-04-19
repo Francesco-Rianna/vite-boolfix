@@ -1,7 +1,7 @@
 <script>
 
 import AppHeader from './components/AppHeader.vue'
-import AppSearchUtentCard from './components/AppSearchUtentCard.vue'
+import AppSearchList from './components/AppSearchList.vue'
 import AppSelect from './components/AppSelect.vue'
 import {store} from './store.js'
 import axios from 'axios'
@@ -10,7 +10,7 @@ export default {
   components : {
     AppHeader,
     AppSelect,
-    AppSearchUtentCard
+    AppSearchList
     
 
   },
@@ -64,9 +64,11 @@ export default {
     <AppSelect @searchDoneMovie="getMovieFromApi" @searchDoneSeries="getSeriesFromApi"></AppSelect>
     
   </header>
-
   <main>
-    <AppSearchUtentCard></AppSearchUtentCard>
+    <h1>Film</h1>
+    <AppSearchList  v-for="movie in store.movies" :key="movie.id" :cardInfo="movie"></AppSearchList>
+    <h1>Serie Tv</h1>
+    <AppSearchList  v-for="series in store.series" :key="series.id" :cardInfo="series"></AppSearchList>
   </main>
 </template>
 
