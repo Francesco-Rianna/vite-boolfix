@@ -61,7 +61,7 @@ export default {
 <template>
   <header class="d-flex justify-content-between px-3 py-1">
     <AppHeader></AppHeader>
-    <AppSelect @searchDoneMovie="getMovieFromApi" @SearchDoneSeries="getSeriesFromApi"></AppSelect>
+    <AppSelect @searchDoneMovie="getMovieFromApi" @searchDoneSeries="getSeriesFromApi"></AppSelect>
     
   </header>
 
